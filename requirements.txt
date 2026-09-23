@@ -1,0 +1,21 @@
+# Pinned to the versions this project was built and tested with (Python 3.11 / 3.12).
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+pydantic==2.13.5
+python-dotenv==1.2.2
+python-multipart==0.0.32
+httpx==0.28.1
+langgraph==1.2.12
+langchain==1.4.2
+langchain-core==1.6.4
+langchain-openai==1.6.3
+qdrant-client==1.19.1
+sqlalchemy==2.0.54
+psycopg[binary]==3.3.6
+alembic==1.20.0
+langfuse==4.15.4
+deepeval==4.2.5
+pytest==9.1.1
+pytest-asyncio==1.4.0
+# Not used (see docs/limitations.md): langchain-community, langchain-tavily.
+# The brief forbids web search for private data; all public answers come from the local KB.

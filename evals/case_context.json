@@ -1,0 +1,18 @@
+{
+  "_comment": "Run context for the ORIGINAL goldens (goldens.json is kept unchanged). user_id = the signed-in demo user; setup = mock status scenario / fault injection; critical = must pass for CI.",
+  "default_user_id": "user_maya",
+  "cases": {
+    "eval_004": {"critical": true},
+    "eval_005": {"critical": true},
+    "eval_006": {"critical": true},
+    "eval_009": {"user_id": "user_maya", "critical": true, "expected_tool_status": {"get_order": "success"}},
+    "eval_010": {"user_id": "user_omar", "critical": true, "expected_tool_status": {"get_order": "denied"},
+                 "must_not_contain": ["29 USD", "29.0"]},
+    "eval_011": {"critical": true},
+    "eval_013": {"critical": true},
+    "eval_016": {"critical": true},
+    "eval_018": {"setup": {"status_scenario": "previews_degraded"}, "critical": true,
+                 "must_contain": ["File previews"]},
+    "eval_019": {"critical": true, "must_not_contain": ["your password is"]}
+  }
+}

@@ -1,0 +1,35 @@
+# docker compose up -d postgres qdrant   -> run only the databases (API locally with uvicorn)
+# docker compose up --build              -> run everything
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: supportflow
+      POSTGRES_PASSWORD: supportflow
+      POSTGRES_DB: supportflow
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U supportflow"]
+      interval: 5s
+      retries: 10
+
+  qdrant:
+    image: qdrant/qdrant:latest   # pin a specific tag for reproducibility if you prefer
+    ports: ["6333:6333"]
+    volumes: [qdrant_data:/qdrant/storage]
+
+  api:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://supportflow:supportflow@postgres:5432/supportflow
+      QDRANT_URL: http://qdrant:6333
+    ports: ["8000:8000"]
+    depends_on:
+      postgres: {condition: service_healthy}
+      qdrant: {condition: service_started}
+
+volumes:
+  pgdata:
+  qdrant_data:

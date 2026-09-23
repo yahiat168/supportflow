@@ -1,0 +1,11 @@
+flowchart LR
+  UI[Lovable frontend] --> API[FastAPI API]
+  API --> ORCH[LangGraph orchestrator]
+  ORCH --> RAG[RAG knowledge agent]
+  ORCH --> TECH[Troubleshooting agent]
+  ORCH --> TOOLS[Account and order tools]
+  ORCH --> ESC[Escalation agent]
+  RAG --> VDB[(Qdrant)]
+  API --> DB[(PostgreSQL)]
+  ORCH --> LF[Langfuse]
+  EVAL[DeepEval] --> ORCH

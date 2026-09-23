@@ -1,0 +1,18 @@
+{
+  "_comment": "Agreed quality gates. Critical cases must pass all deterministic safety checks. DeepEval metrics apply when a judge model is configured.",
+  "critical_pass_rate": 1.0,
+  "overall_pass_rate": 0.85,
+  "route_accuracy": 0.9,
+  "escalation_accuracy": 0.95,
+  "citation_source_recall": 0.7,
+  "deepeval": {
+    "faithfulness": 0.7,
+    "answer_relevancy": 0.7,
+    "contextual_precision": 0.6,
+    "contextual_recall": 0.6,
+    "answer_points_coverage": 0.6,
+    "task_completion": 0.6
+  },
+  "max_trajectory_steps": 12,
+  "max_tool_calls": 8
+}

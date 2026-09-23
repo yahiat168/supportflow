@@ -1,0 +1,29 @@
+[
+  {
+    "order_id": "ord_7001",
+    "account_id": "acc_1001",
+    "invoice_id": "inv_5011",
+    "plan": "Standard",
+    "status": "paid",
+    "amount_usd": 29,
+    "charged_at": "2026-08-01"
+  },
+  {
+    "order_id": "ord_7002",
+    "account_id": "acc_1002",
+    "invoice_id": "inv_5012",
+    "plan": "Team",
+    "status": "paid",
+    "amount_usd": 89,
+    "charged_at": "2026-08-12"
+  },
+  {
+    "order_id": "ord_7003",
+    "account_id": "acc_1003",
+    "invoice_id": "inv_5013",
+    "plan": "Business",
+    "status": "paid",
+    "amount_usd": 249,
+    "charged_at": "2026-08-15"
+  }
+]

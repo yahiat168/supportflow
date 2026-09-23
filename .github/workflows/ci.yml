@@ -1,0 +1,26 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      APP_ENV: test
+      LLM_PROVIDER: offline
+      EMBEDDING_PROVIDER: offline
+      QDRANT_URL: ":memory:"
+      DATABASE_URL: sqlite:///./ci.db
+      TOOL_TIMEOUT_S: "0.5"
+      EVALS_ADMIN_TOKEN: ci-token
+      SKIP_DEEPEVAL: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+      - run: pip install -r requirements.txt
+      - name: Unit, API and eval-gate tests (offline, no keys)
+        run: pytest -q
+      - name: Evaluation run (deterministic gates)
+        run: python -m evals.runner --no-deepeval
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: eval-report, path: artifacts/}

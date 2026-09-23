@@ -1,0 +1,13 @@
+[
+  {
+    "id": "known_001_kb_gap",
+    "category": "known_failure",
+    "input": "Can I protect a public share link with a password?",
+    "expected_answer_points": ["Explain how to add a password to a share link"],
+    "source_ids": ["sharing_permissions"],
+    "expected_route": ["knowledge"],
+    "should_escalate": false,
+    "must_contain": ["password-protected"],
+    "_note": "Deliberate failing example for the demo: the knowledge base has no password-protected link feature, so the correct system behaviour (no-evidence answer) fails this unrealistic expectation. Shows failure-stage attribution."
+  }
+]

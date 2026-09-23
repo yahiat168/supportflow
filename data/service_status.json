@@ -1,0 +1,56 @@
+{
+  "_comment": "Mock live status feed for get_service_status. The active scenario is chosen with STATUS_SCENARIO or POST /dev/status (development only).",
+  "scenarios": {
+    "operational": {
+      "overall": "operational",
+      "components": [
+        {"name": "File storage", "status": "operational"},
+        {"name": "Desktop sync", "status": "operational"},
+        {"name": "File previews", "status": "operational"},
+        {"name": "Sharing", "status": "operational"},
+        {"name": "Email notifications", "status": "operational"}
+      ],
+      "active_incidents": []
+    },
+    "previews_degraded": {
+      "overall": "degraded",
+      "components": [
+        {"name": "File storage", "status": "operational"},
+        {"name": "Desktop sync", "status": "operational"},
+        {"name": "File previews", "status": "degraded"},
+        {"name": "Sharing", "status": "operational"},
+        {"name": "Email notifications", "status": "operational"}
+      ],
+      "active_incidents": [
+        {
+          "incident_id": "INC-2026-031",
+          "component": "File previews",
+          "status": "investigating",
+          "message": "Some users may see slow or failed file previews. Files remain safe and can still be downloaded. The engineering team is investigating.",
+          "updated_at": "2026-09-23T08:40:00Z",
+          "approved_eta": null
+        }
+      ]
+    },
+    "sync_outage": {
+      "overall": "partial_outage",
+      "components": [
+        {"name": "File storage", "status": "operational"},
+        {"name": "Desktop sync", "status": "partial_outage"},
+        {"name": "File previews", "status": "operational"},
+        {"name": "Sharing", "status": "operational"},
+        {"name": "Email notifications", "status": "operational"}
+      ],
+      "active_incidents": [
+        {
+          "incident_id": "INC-2026-032",
+          "component": "Desktop sync",
+          "status": "identified",
+          "message": "Desktop sync is delayed for some workspaces. Changes are queued and will sync once the issue is resolved.",
+          "updated_at": "2026-09-23T09:05:00Z",
+          "approved_eta": null
+        }
+      ]
+    }
+  }
+}

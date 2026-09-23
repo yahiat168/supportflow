@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+*.db
+.deepeval/
+.deepeval*
+qdrant_storage/
+node_modules/
+.cache/

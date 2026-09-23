@@ -1,0 +1,11 @@
+flowchart TD
+  START([User request]) --> CLASSIFY[Orchestrator classifies intent]
+  CLASSIFY -->|product question| KNOWLEDGE[Knowledge subagent]
+  CLASSIFY -->|technical issue| TROUBLE[Troubleshooting subagent]
+  CLASSIFY -->|account or order| ACCOUNT[Account tools subagent]
+  CLASSIFY -->|risk or unresolved issue| ESCALATE[Escalation subagent]
+  KNOWLEDGE --> CRITIC[Evidence critic]
+  TROUBLE --> CRITIC
+  ACCOUNT --> CRITIC
+  ESCALATE --> CRITIC
+  CRITIC --> RESPONSE[Final response and citations]

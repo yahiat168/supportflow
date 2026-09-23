@@ -1,0 +1,23 @@
+[
+  {
+    "ticket_id": "SUP-3001",
+    "account_id": "acc_1001",
+    "category": "sync",
+    "status": "open",
+    "summary": "Duplicate conflict copies after offline editing"
+  },
+  {
+    "ticket_id": "SUP-3002",
+    "account_id": "acc_1002",
+    "category": "billing",
+    "status": "resolved",
+    "summary": "Question about renewal charge"
+  },
+  {
+    "ticket_id": "SUP-3003",
+    "account_id": "acc_1003",
+    "category": "security",
+    "status": "escalated",
+    "summary": "Suspected account takeover"
+  }
+]

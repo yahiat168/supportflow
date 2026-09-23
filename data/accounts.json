@@ -1,0 +1,26 @@
+[
+  {
+    "account_id": "acc_1001",
+    "email": "maya.hassan@example.com",
+    "customer_name": "Maya Hassan",
+    "plan": "Standard",
+    "workspace_id": "ws_2001",
+    "verified": true
+  },
+  {
+    "account_id": "acc_1002",
+    "email": "omar.saleh@example.com",
+    "customer_name": "Omar Saleh",
+    "plan": "Team",
+    "workspace_id": "ws_2002",
+    "verified": false
+  },
+  {
+    "account_id": "acc_1003",
+    "email": "nour.ali@example.com",
+    "customer_name": "Nour Ali",
+    "plan": "Business",
+    "workspace_id": "ws_2003",
+    "verified": true
+  }
+]

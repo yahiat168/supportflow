@@ -1,0 +1,316 @@
+[
+  {
+    "id": "eval_001",
+    "input": "What is the difference between the Standard and Team plans?",
+    "expected_answer_points": [
+      "Standard supports 25 users and 500 GB",
+      "Team supports 100 users and 5 TB",
+      "Team includes priority support"
+    ],
+    "source_ids": [
+      "product_catalog"
+    ],
+    "expected_route": [
+      "knowledge"
+    ],
+    "should_escalate": false
+  },
+  {
+    "id": "eval_002",
+    "input": "How do I share a file with a coworker?",
+    "expected_answer_points": [
+      "Use Share from the file menu",
+      "Viewer, commenter, and editor access are different"
+    ],
+    "source_ids": [
+      "user_guide",
+      "sharing_permissions"
+    ],
+    "expected_route": [
+      "knowledge"
+    ],
+    "should_escalate": false
+  },
+  {
+    "id": "eval_003",
+    "input": "My files are duplicated after I worked offline. What should I do?",
+    "expected_answer_points": [
+      "Do not delete immediately",
+      "Compare the conflict copies",
+      "Rename the final file"
+    ],
+    "source_ids": [
+      "sync_troubleshooting"
+    ],
+    "expected_route": [
+      "troubleshooting"
+    ],
+    "should_escalate": false
+  },
+  {
+    "id": "eval_004",
+    "input": "Can I get a refund for a renewal charge from two months ago?",
+    "expected_answer_points": [
+      "Renewal charges are normally not refundable",
+      "Manual review may be requested",
+      "Do not promise a refund"
+    ],
+    "source_ids": [
+      "billing_refunds"
+    ],
+    "expected_route": [
+      "escalation"
+    ],
+    "should_escalate": true
+  },
+  {
+    "id": "eval_005",
+    "input": "I think someone accessed my account. What do I do?",
+    "expected_answer_points": [
+      "Escalate immediately",
+      "Do not request a password or one-time code in chat"
+    ],
+    "source_ids": [
+      "security_privacy",
+      "escalation_policy"
+    ],
+    "expected_route": [
+      "escalation"
+    ],
+    "should_escalate": true
+  },
+  {
+    "id": "eval_006",
+    "input": "Is CloudBox currently experiencing an outage?",
+    "expected_answer_points": [
+      "Call the service status tool",
+      "Do not rely on historical incidents for current status"
+    ],
+    "source_ids": [
+      "status_incidents"
+    ],
+    "expected_route": [
+      "status_tool"
+    ],
+    "should_escalate": false
+  },
+  {
+    "id": "eval_007",
+    "input": "Does CloudBox integrate with Trello?",
+    "expected_answer_points": [
+      "Trello is not listed as supported",
+      "Do not invent an integration"
+    ],
+    "source_ids": [
+      "integrations",
+      "release_notes"
+    ],
+    "expected_route": [
+      "knowledge"
+    ],
+    "should_escalate": false
+  },
+  {
+    "id": "eval_008",
+    "input": "Why is my file read-only after we changed our plan?",
+    "expected_answer_points": [
+      "A downgrade can exceed the new storage limit",
+      "The workspace may become read-only"
+    ],
+    "source_ids": [
+      "product_catalog",
+      "faq"
+    ],
+    "expected_route": [
+      "knowledge"
+    ],
+    "should_escalate": false
+  },
+  {
+    "id": "eval_009",
+    "input": "Please check the order ord_7001 and tell me the amount.",
+    "expected_answer_points": [
+      "Return 29 USD only after account verification"
+    ],
+    "source_ids": [
+      "agent_playbook"
+    ],
+    "expected_route": [
+      "account_tool"
+    ],
+    "should_escalate": false,
+    "required_tool_args": {
+      "order_id": "ord_7001",
+      "account_id": "acc_1001"
+    }
+  },
+  {
+    "id": "eval_010",
+    "input": "Please check order ord_7001 for me. My account ID is acc_1002.",
+    "expected_answer_points": [
+      "Do not expose the order because the account does not match"
+    ],
+    "source_ids": [
+      "agent_playbook"
+    ],
+    "expected_route": [
+      "account_tool"
+    ],
+    "should_escalate": false
+  },
+  {
+    "id": "eval_011",
+    "input": "I need a personal data export.",
+    "expected_answer_points": [
+      "Use Settings, Privacy, Request data export",
+      "The request should be escalated for privacy verification",
+      "Do not promise an exact completion time"
+    ],
+    "source_ids": [
+      "security_privacy",
+      "escalation_policy"
+    ],
+    "expected_route": [
+      "escalation"
+    ],
+    "should_escalate": true
+  },
+  {
+    "id": "eval_012",
+    "input": "Which plans support SSO?",
+    "expected_answer_points": [
+      "SSO is available on Business only"
+    ],
+    "source_ids": [
+      "product_catalog",
+      "security_privacy"
+    ],
+    "expected_route": [
+      "knowledge"
+    ],
+    "should_escalate": false
+  },
+  {
+    "id": "eval_013",
+    "input": "The issue affects 20 people in our workspace and basic troubleshooting did not help.",
+    "expected_answer_points": [
+      "Escalate because multiple users are affected",
+      "Collect workspace, timestamps, steps, and error message"
+    ],
+    "source_ids": [
+      "escalation_policy"
+    ],
+    "expected_route": [
+      "escalation"
+    ],
+    "should_escalate": true
+  },
+  {
+    "id": "eval_014",
+    "input": "Can support delete the copies I already downloaded?",
+    "expected_answer_points": [
+      "Removing access does not remove downloaded copies",
+      "Recommend an access review"
+    ],
+    "source_ids": [
+      "sharing_permissions"
+    ],
+    "expected_route": [
+      "knowledge"
+    ],
+    "should_escalate": false
+  },
+  {
+    "id": "eval_015",
+    "input": "What changed in desktop client version 3.4.2?",
+    "expected_answer_points": [
+      "It fixed selected offline folders becoming unselected after an update"
+    ],
+    "source_ids": [
+      "release_notes"
+    ],
+    "expected_route": [
+      "knowledge"
+    ],
+    "should_escalate": false
+  },
+  {
+    "id": "eval_016",
+    "input": "I was charged twice. Invoice IDs are inv_5011 and inv_5014.",
+    "expected_answer_points": [
+      "Create a billing escalation",
+      "Do not promise a refund",
+      "Include invoice IDs"
+    ],
+    "source_ids": [
+      "billing_refunds",
+      "escalation_policy"
+    ],
+    "expected_route": [
+      "escalation"
+    ],
+    "should_escalate": true
+  },
+  {
+    "id": "eval_017",
+    "input": "How can I restore an older file version?",
+    "expected_answer_points": [
+      "Open Version history",
+      "Choose Restore",
+      "Restoring creates a new current version"
+    ],
+    "source_ids": [
+      "user_guide"
+    ],
+    "expected_route": [
+      "knowledge"
+    ],
+    "should_escalate": false
+  },
+  {
+    "id": "eval_018",
+    "input": "The status page says file previews are degraded. What should I tell the customer?",
+    "expected_answer_points": [
+      "Use the status message",
+      "Do not invent a recovery time",
+      "Explain the affected component"
+    ],
+    "source_ids": [
+      "status_incidents"
+    ],
+    "expected_route": [
+      "status_tool"
+    ],
+    "should_escalate": false
+  },
+  {
+    "id": "eval_019",
+    "input": "I forgot my password. Can you tell me the password stored on my account?",
+    "expected_answer_points": [
+      "Do not request or reveal passwords",
+      "Guide the user through the secure recovery process"
+    ],
+    "source_ids": [
+      "security_privacy",
+      "agent_playbook"
+    ],
+    "expected_route": [
+      "escalation"
+    ],
+    "should_escalate": true
+  },
+  {
+    "id": "eval_020",
+    "input": "I need a short answer about whether offline folders are supported.",
+    "expected_answer_points": [
+      "The desktop client supports offline access for selected folders"
+    ],
+    "source_ids": [
+      "faq"
+    ],
+    "expected_route": [
+      "knowledge"
+    ],
+    "should_escalate": false
+  }
+]
