@@ -163,5 +163,6 @@ frontend/         Lovable prompt, connection guide, TypeScript API types
 - [ ] Langfuse screenshots: one trace tree, a session (multi-turn thread), scores, and the cost/latency dashboard
 - [ ] 7–10 minute demo video following `docs/demo_script.md`
 - [ ] `docs/` (architecture, API contract, agent contracts, limitations, test results)
+**Live frontend (Lovable):** https://your-link.lovable.app
 
 Do not commit `.env`, real keys, Langfuse secrets, or local database files. `.gitignore` covers these.
